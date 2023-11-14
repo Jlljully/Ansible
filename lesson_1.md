@@ -40,6 +40,9 @@
 
 ![Скрин](https://github.com/Jlljully/Ansible/blob/main/files/lesson_1/Screenshot_7.png "7")
 
+[Ссылка на пуш](https://github.com/Jlljully/ansible_push)
+
+
 ## Необязательная часть
 
 1. При помощи `ansible-vault` расшифруйте все зашифрованные файлы с переменными.
