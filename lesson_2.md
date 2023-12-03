@@ -140,8 +140,8 @@
          src: ./group_vars/vector.yaml.j2
          mode: 0644
          dest: /etc/vector/vector.yaml
-         owner: bin
-         group: wheel
+         owner: vector
+         group: vector
     - name: Restart Vector
       become: true
       ansible.builtin.command: "systemctl restart vector"
