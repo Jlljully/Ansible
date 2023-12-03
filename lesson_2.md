@@ -47,6 +47,8 @@
 ![Скрин](https://github.com/Jlljully/Ansible/blob/main/files/lesson_2/Untitled7.png "7") ![Скрин](https://github.com/Jlljully/Ansible/blob/main/files/lesson_2/Untitled8.png "8")
 
 
+# **Проект развертки хостов с Clickhouse и Vector при помощи Ansible-playbook 
+
 ## *Основные компоненты*
 
   # Структура проекта
