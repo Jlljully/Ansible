@@ -39,3 +39,103 @@
 ![Скрин](https://github.com/Jlljully/Ansible/blob/main/files/lesson_2/Untitled5.png "5")
 
 ![Скрин](https://github.com/Jlljully/Ansible/blob/main/files/lesson_2/Untitled6.png "6")
+
+
+---
+
+
+![Скрин](https://github.com/Jlljully/Ansible/blob/main/files/lesson_2/Untitled7.png "7") ![Скрин](https://github.com/Jlljully/Ansible/blob/main/files/lesson_2/Untitled8.png "8")
+
+
+## *Основные компоненты*
+
+  # Структура проекта
+
+ ```
+  -/group_vars  
+      -clickhouse  
+         -vars.yml  
+      -vector.yaml.j2  
+  -/invetnory  
+      -prod.yml  
+  -site.yml  
+  ```
+
+  # Код проекта
+
+ ```
+---
+- name: Install Clickhouse
+  hosts: clickhouse
+  handlers:
+    - name: Start clickhouse service
+      become: true
+      ansible.builtin.service:
+        name: clickhouse-server
+        state: restarted
+  tasks:
+    - block:
+        - name: Get clickhouse distrib
+          ansible.builtin.get_url:
+            url: "https://packages.clickhouse.com/rpm/stable/{{ item }}-{{ clickhouse_version }}.noarch.rpm"
+            dest: "./{{ item }}-{{ clickhouse_version }}.rpm"
+          with_items: "{{ clickhouse_packages }}"
+      rescue:
+        - name: Get clickhouse distrib
+          ansible.builtin.get_url:
+            url: "https://packages.clickhouse.com/rpm/stable/clickhouse-common-static-{{ clickhouse_version }}.x86_64.rpm"
+            dest: "./clickhouse-common-static-{{ clickhouse_version }}.rpm"
+
+    - name: Install clickhouse packages
+      become: true
+      ansible.builtin.yum:
+        name:
+          - clickhouse-common-static-{{ clickhouse_version }}.rpm
+          - clickhouse-client-{{ clickhouse_version }}.rpm
+          - clickhouse-server-{{ clickhouse_version }}.rpm
+      notify: Start clickhouse service
+
+    - name: Flush handlers
+      meta: flush_handlers
+
+    - name: Create database
+      ansible.builtin.command: "clickhouse-client -q 'create database logs;'"
+      register: create_db
+      failed_when: create_db.rc != 0 and create_db.rc !=82
+      changed_when: create_db.rc == 0
+
+- name: Install Vector
+  hosts: vector
+  become: yes
+  become_user: root
+  tasks:
+    - block:
+        - name: Get vector distrib
+          ansible.builtin.get_url:
+            url: "https://packages.timber.io/vector/{{ vector_version }}/vector-{{ vector_version }}-1.{{ ansible_architecture }}.rpm"
+            dest: "/home/centos/vector-{{ vector_version }}.rpm"
+
+    - name: Install Vector packages
+      become: true
+      ansible.builtin.yum:
+        name:
+          - vector-{{ vector_version }}.rpm
+
+    - name: Start Vector service
+      become: true
+      ansible.builtin.service:
+        name: vector
+        state: restarted
+
+    - name: write using jinja2
+      ansible.builtin.template:
+         src: ./group_vars/vector.yaml.j2
+         mode: 0644
+         dest: /etc/vector/vector.yaml
+         owner: bin
+         group: wheel
+    - name: Restart Vector
+      become: true
+      ansible.builtin.command: "systemctl restart vector"
+
+ ```
