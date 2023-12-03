@@ -22,8 +22,20 @@
 
 ---
 
-### Как оформить решение задания
-
-Выполненное домашнее задание пришлите в виде ссылки на .md-файл в вашем репозитории.
+[Ссылка на репозиторий](https://github.com/Jlljully/ansible_push/tree/ansible02)
 
 ---
+
+
+
+![Скрин](https://github.com/Jlljully/Ansible/blob/main/files/lesson_2/Untitled.png "1")
+   
+![Скрин](https://github.com/Jlljully/Ansible/blob/main/files/lesson_2/Untitled2.png "2")
+  
+![Скрин](https://github.com/Jlljully/Ansible/blob/main/files/lesson_2/Untitled3.png "3")  
+
+![Скрин](https://github.com/Jlljully/Ansible/blob/main/files/lesson_2/Untitled4.png "4")  
+
+![Скрин](https://github.com/Jlljully/Ansible/blob/main/files/lesson_2/Untitled5.png "5")
+
+![Скрин](https://github.com/Jlljully/Ansible/blob/main/files/lesson_2/Untitled6.png "6")
