@@ -166,7 +166,7 @@
 
 + В плее Install Clickhouse происходит скачивание дистрибутива Clickhouse, установка пакетов, рестарт сервиса и создание базы данных
   
-  ![Скрин](https://github.com/Jlljully/Ansible/blob/main/files/lesson_3/clickstatus.png "1")
+  ![Скрин](https://github.com/Jlljully/Ansible/blob/main/files/lesson_3/clickhousestatus.png "1")
   
 + В плее Install Vector происходит скачивание дистрибутива Vector, установка пакетов, замена стандартного конфиг файла и рестарт сервиса
 
@@ -174,7 +174,7 @@
 
   + В плее Install lighthouse происходит подключение EPEL репозитория, установка nginx и git, замена стандартного конфиг файла nginx и скачивание файлов lighthouse с //github.com/VKCOM/lighthouse.git, а потом рестарт сервиса nginx
 
-![Скрин](https://github.com/Jlljully/Ansible/blob/main/files/lesson_3/lightstatus.png "1")
+![Скрин](https://github.com/Jlljully/Ansible/blob/main/files/lesson_3/lighthousestatus.png "1")
 
 ![Скрин](https://github.com/Jlljully/Ansible/blob/main/files/lesson_3/Untitled4.png "2")
 
