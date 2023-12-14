@@ -151,14 +151,20 @@
          dest: /etc/nginx/nginx.conf
          owner: nginx
          group: nginx
-      notify:
-        - nginx systemd
+
     - name: Clone repo
       ansible.builtin.git:
          repo: https://github.com/VKCOM/lighthouse.git
          dest: /usr/share/nginx/index
+      notify:
+        - nginx systemd
 
  ```
 
 
-Playbook
+# Что делает Playbook:
+
++ В плее Install Clickhouse происходит скачивание дистрибутива Clickhouse, установка пакетов, рестарт сервиса и создание базы данных
++ В плее Install Vector происходит скачивание дистрибутива Vector, установка пакетов, замена стандартного конфиг файла и рестарт сервиса
++ В плее Install lighthouse происходит подключение EPEL репозитория, установка nginx и git, замена стандартного конфиг файла nginx и скачивание файлов lighthouse с //github.com/VKCOM/lighthouse.git, а потом рестарт сервиса nginx
+
