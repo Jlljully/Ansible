@@ -182,8 +182,8 @@ INFO     Pruning extra files from scenario ephemeral directory
 
    ![Скрин](https://github.com/Jlljully/Ansible/blob/main/files/lesson_5/Screenshot_1.png "1")
 
-3. Запуск 
-```
+3. Запуск против vector
+```molecule.yuml
 ---
 dependency:
   name: galaxy
