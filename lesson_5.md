@@ -50,9 +50,10 @@
 ### Molecule
 
 1. Очень польшой лог для скриншота, поэтому текстом:
-   <details><summary>Clickhouse test:</summary>
-      ```
-   root@bubuntu:/home/jlljully/mnt-homeworks/08-ansible-05-testing/roles/clickhouse# molecule test -s centos_7
+<details><summary>Clickhouse_test:</summary>
+   
+```
+root@bubuntu:/home/jlljully/mnt-homeworks/08-ansible-05-testing/roles/clickhouse# molecule test -s centos_7
 INFO     centos_7 scenario test matrix: dependency, lint, cleanup, destroy, syntax, create, prepare, converge, idempotence, side_effect, verify, cleanup, destroy
 INFO     Performing prerun...
 INFO     Set ANSIBLE_LIBRARY=/root/.cache/ansible-compat/7e099f/modules:/root/.ansible/plugins/modules:/usr/share/ansible/plugins/modules
