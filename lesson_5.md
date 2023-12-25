@@ -51,6 +51,7 @@
 
 1. Очень польшой лог для скриншота, поэтому текстом:
    <details><summary>Clickhouse test:</summary>
+      ```
    root@bubuntu:/home/jlljully/mnt-homeworks/08-ansible-05-testing/roles/clickhouse# molecule test -s centos_7
 INFO     centos_7 scenario test matrix: dependency, lint, cleanup, destroy, syntax, create, prepare, converge, idempotence, side_effect, verify, cleanup, destroy
 INFO     Performing prerun...
@@ -173,6 +174,7 @@ PLAY RECAP *********************************************************************
 localhost                  : ok=2    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0
 
 INFO     Pruning extra files from scenario ephemeral directory
+```
 </details>
 
 2. скрин1
