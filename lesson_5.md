@@ -49,7 +49,7 @@
 
 ### Molecule
 
-1. Очень большой лог для скриншота, поэтому текстом:
+1. Очень большой лог для скриншота, поэтому текстом под спойлером:
 <details><summary>Clickhouse_test:</summary>
    
 ```
@@ -183,29 +183,6 @@ INFO     Pruning extra files from scenario ephemeral directory
    ![Скрин](https://github.com/Jlljully/Ansible/blob/main/files/lesson_5/Screenshot_1.png "1")
 
 3. Запуск против vector
-```molecule.yuml
----
-dependency:
-  name: galaxy
-driver:
-  name: docker
-platforms:
-  - name: ubuntu
-    image: ubuntu:latest
-      #    pre_build_image: true
-  - name: aragast
-    image: aragast/netology:latest
-      #    pre_build_image: true
-  - name: centos
-    image: centos:7
-      #    pre_build_image: true
-provisioner:
-  name: ansible
-verifier:
-  name: ansible
-
-```
-
 
 <details><summary>Vector_test:</summary>
    
@@ -327,3 +304,28 @@ INFO     Pruning extra files from scenario ephemeral directory
 
 ```
 </details>
+
+
+   molecule.yuml:
+```
+---
+dependency:
+  name: galaxy
+driver:
+  name: docker
+platforms:
+  - name: ubuntu
+    image: ubuntu:latest
+      #    pre_build_image: true
+  - name: aragast
+    image: aragast/netology:latest
+      #    pre_build_image: true
+  - name: centos
+    image: centos:7
+      #    pre_build_image: true
+provisioner:
+  name: ansible
+verifier:
+  name: ansible
+
+```
