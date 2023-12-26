@@ -162,9 +162,16 @@ if __name__ == '__main__':
 
 **Шаг 4.** Проверьте module на исполняемость локально.
 
+![Скрин](https://github.com/Jlljully/Ansible/blob/main/files/lesson_6/Screenshot_1.png "1")
+
+
 **Шаг 5.** Напишите single task playbook и используйте module в нём.
 
 **Шаг 6.** Проверьте через playbook на идемпотентность.
+
+![Скрин](https://github.com/Jlljully/Ansible/blob/main/files/lesson_6/Screenshot_2.png "1")
+
+![Скрин](https://github.com/Jlljully/Ansible/blob/main/files/lesson_6/Screenshot_3.png "1")
 
 **Шаг 7.** Выйдите из виртуального окружения.
 
@@ -184,23 +191,20 @@ if __name__ == '__main__':
 
 **Шаг 15.** Установите collection из локального архива: `ansible-galaxy collection install <archivename>.tar.gz`.
 
+![Скрин](https://github.com/Jlljully/Ansible/blob/main/files/lesson_6/Screenshot_4.png "1")
+
 **Шаг 16.** Запустите playbook, убедитесь, что он работает.
+
+![Скрин](https://github.com/Jlljully/Ansible/blob/main/files/lesson_6/Screenshot_5.png "1")
 
 **Шаг 17.** В ответ необходимо прислать ссылки на collection и tar.gz архив, а также скриншоты выполнения пунктов 4, 6, 15 и 16.
 
-## Необязательная часть
-
-1. Реализуйте свой модуль для создания хостов в Yandex Cloud.
-2. Модуль может и должен иметь зависимость от `yc`, основной функционал: создание ВМ с нужным сайзингом на основе нужной ОС. Дополнительные модули по созданию кластеров ClickHouse, MySQL и прочего реализовывать не надо, достаточно простейшего создания ВМ.
-3. Модуль может формировать динамическое inventory, но эта часть не является обязательной, достаточно, чтобы он делал хосты с указанной спецификацией в YAML.
-4. Протестируйте модуль на идемпотентность, исполнимость. При успехе добавьте этот модуль в свою коллекцию.
-5. Измените playbook так, чтобы он умел создавать инфраструктуру под inventory, а после устанавливал весь ваш стек Observability на нужные хосты и настраивал его.
-6. В итоге ваша коллекция обязательно должна содержать: clickhouse-role (если есть своя), lighthouse-role, vector-role, два модуля: my_own_module и модуль управления Yandex Cloud хостами и playbook, который демонстрирует создание Observability стека.
 
 ---
 
-### Как оформить решение задания
+# Ответ
 
-Выполненное домашнее задание пришлите в виде ссылки на .md-файл в вашем репозитории.
+[My own collection](https://github.com/Jlljully/my_own_collection)
 
----
+[my_own_namespace-yandex_cloud_elk-1.0.0.tar.gz](https://github.com/Jlljully/my_own_collection/blob/main/my_own_namespace-yandex_cloud_elk-1.0.0.tar.gz)
+
